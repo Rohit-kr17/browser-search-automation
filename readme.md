@@ -16,7 +16,7 @@ To download and install Python 3, go to the official Python website and download
 You can install Selenium using pip, which is the package installer for Python. Open a command prompt or terminal window and run the following command:
 
 
-```
+```bash
 pip install selenium
 ```
 
@@ -37,7 +37,7 @@ To download and install ChromeDriver, follow these steps:
 4. Open the .env file and add your Bing email and password in the following format:
 
 
-```
+```bash
 EMAIL=your_email_address
 PASSWORD=your_password
 ```
@@ -45,7 +45,7 @@ PASSWORD=your_password
 5. Save the .env file.
 6. Run the script using the following command:
 
-```
-python bing_search_bot.py
+```bash
+python3 bing_search_bot.py
 ```
 <b> The script will log in to Bing using your email and password, perform the search queries, and then close the browser window. The results of the searches will be displayed in the browser window.</b>
