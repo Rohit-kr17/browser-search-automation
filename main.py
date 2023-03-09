@@ -1,0 +1,59 @@
+import os
+import time
+from dotenv import load_dotenv
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+load_dotenv()
+
+# login variables
+email = os.getenv("EMAIL")  # Your email address from .env file
+passWord = os.getenv("PASSWORD") # Your password from .env file
+
+
+# List of search queries
+queries = ["Artificial intelligence", "Blockchain technology", "Cloud computing", "Data analytics", "Cybersecurity", "Internet of Things (IoT)", "Virtual reality", "Augmented reality", "Machine learning", "Quantum computing", "3D printing", "Robotics", "Biotechnology", "Neural networks", "Natural language processing",
+        "Big data", "Cryptocurrency", "Edge computing", "Fintech",    "Smart homes",    "Smart cities",    "Wireless technology",    "Autonomous vehicles",    "Drones",    "Gaming",    "Mobile devices",    "Social media",    "E-commerce",    "Digital transformation",    "Wearable technology"]
+
+
+# Initialize a new instance of the Chrome driver
+driver = webdriver.Chrome()
+
+
+# Navigate to the login page
+driver.get("https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&id=264960&wreply=https%3a%2f%2fwww.bing.com%2fsecure%2fPassport.aspx%3fedge_suppress_profile_switch%3d1%26requrl%3dhttps%253a%252f%252fwww.bing.com%252f%253fwlexpsignin%253d1%26sig%3d16C20CCD6A2B602D072F1E026BD9618B&wp=MBI_SSL&lc=1033&CSRFToken=0843d6ef-a4de-43ce-8ec6-189f121347b6&aadredir=1")
+time.sleep(2)
+email_field = driver.find_element(By.ID, "i0116")
+email_field.send_keys(email)
+time.sleep(2)
+next_button = driver.find_element(By.ID, "idSIButton9")
+next_button.click()
+time.sleep(2)
+password_field = driver.find_element(By.ID, "i0118")
+password_field.send_keys(passWord)
+time.sleep(2)
+next_button = driver.find_element(By.ID, "idSIButton9")
+next_button.click()
+time.sleep(2)
+next_button = driver.find_element(By.ID, "idSIButton9")
+next_button.click()
+time.sleep(10)
+
+
+
+# Search engine URL
+url = "https://www.bing.com/"
+
+for query in queries:
+    # Load the search engine page with the current query
+    driver.get(url)
+    search_box = driver.find_element(By.NAME, "q")
+    search_box.send_keys(query)
+    search_box.submit()
+
+
+time.sleep(10)
+
+
+# Close the browser window
+driver.quit()
