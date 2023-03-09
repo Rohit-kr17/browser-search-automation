@@ -16,7 +16,9 @@ To download and install Python 3, go to the official Python website and download
 You can install Selenium using pip, which is the package installer for Python. Open a command prompt or terminal window and run the following command:
 
 
-```pip install selenium```
+```
+pip install selenium
+```
 
 ### ChromeDriver
 ChromeDriver is a standalone server that implements the W3C WebDriver standard. It allows you to automate web browser interactions, such as clicking buttons and filling out forms.
