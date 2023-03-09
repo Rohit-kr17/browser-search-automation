@@ -1,10 +1,12 @@
+# Description: This script will search for a list of queries on Bing.com and will log you in automatically using your Microsoft account.
+
 import os
 import time
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-load_dotenv()
+load_dotenv()  # load environment variables from .env file
 
 # login variables
 email = os.getenv("EMAIL")  # Your email address from .env file
@@ -50,6 +52,7 @@ for query in queries:
     search_box = driver.find_element(By.NAME, "q")
     search_box.send_keys(query)
     search_box.submit()
+    time.sleep(1)
 
 
 time.sleep(10)
