@@ -48,4 +48,4 @@ PASSWORD=your_password
 ```bash
 python3 bing_search_bot.py
 ```
-<b> The script will log in to Bing using your email and password, perform the search queries, and then close the browser window. The results of the searches will be displayed in the browser window.</b>
+<mark>The script will log in to Bing using your email and password, perform the search queries, and then close the browser window. The results of the searches will be displayed in the browser window.<mark>
