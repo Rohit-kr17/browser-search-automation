@@ -16,7 +16,7 @@ To download and install Python 3, go to the official Python website and download
 You can install Selenium using pip, which is the package installer for Python. Open a command prompt or terminal window and run the following command:
 
 
-```bash
+```shell
 pip install selenium
 ```
 
