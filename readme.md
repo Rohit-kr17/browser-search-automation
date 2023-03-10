@@ -44,9 +44,9 @@ To download and install ChromeDriver, follow these steps:
 3. Create a new file named _.env_ in the same directory as the script.
 4. Open the `.env file` and add your Bing email and password in the following format:
 
-```bash
-EMAIL=your_email_address
-PASSWORD=your_password
+```python
+EMAIL="your_email_address"
+PASSWORD="your_password"
 ```
 
 5. Save the .env file.
