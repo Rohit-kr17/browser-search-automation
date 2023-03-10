@@ -17,7 +17,9 @@ You can install Selenium using pip, which is the package installer for Python. O
 
 
 ```shell
-pip install selenium
+pip install selenium # it will install selenium and all its dependencies
+
+pip install python-dotenv # it will install python-dotenv and all its dependencies
 ```
 
 ### ChromeDriver
@@ -33,8 +35,8 @@ To download and install ChromeDriver, follow these steps:
 
 1. Clone or download the script to your local machine.
 2. Open a command prompt or terminal window and navigate to the directory containing the script.
-3. Create a new file named .env in the same directory as the script.
-4. Open the .env file and add your Bing email and password in the following format:
+3. Create a new file named *.env* in the same directory as the script.
+4. Open the `.env file` and add your Bing email and password in the following format:
 
 
 ```bash
@@ -47,5 +49,6 @@ PASSWORD=your_password
 
 ```bash
 python3 bing_search_bot.py
+# or you can just double click the .py file
 ```
 <mark>The script will log in to Bing using your email and password, perform the search queries, and then close the browser window. The results of the searches will be displayed in the browser window.<mark>
