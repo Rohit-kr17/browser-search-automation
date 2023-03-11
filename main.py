@@ -67,7 +67,6 @@ if __name__ == "__main__":
         passWord = j
         driver = webdriver.Chrome()
         login(driver, email, passWord)
-        search(driver, testQueries)
+        search(driver, queries)
         time.sleep(5)
     driver.quit()
-
