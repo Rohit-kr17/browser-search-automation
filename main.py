@@ -6,20 +6,30 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
+emails = []
+passwords = []
 
 load_dotenv()  # load environment variables from .env file
-email0 = os.getenv("EMAIL0")  # Your email address from .env file
-passWord0 = os.getenv("PASSWORD0") # Your password from .env file
-email1 = os.getenv("EMAIL1") # Your email address from .env file
-passWord1 = os.getenv("PASSWORD1") # Your password from .env file
-email2 = os.getenv("EMAIL2") # Your email address from .env file
-passWord2 = os.getenv("PASSWORD2") # Your password from .env file
-url = "https://www.bing.com/" # Search engine URL
+# emails.append(os.getenv("EMAIL0"))  # Your email address from .env file
+# passwords.append(os.getenv("PASSWORD0")) # Your password from .env file
+# emails.append(os.getenv("EMAIL1")) # Your email address from .env file
+# passwords.append(os.getenv("PASSWORD1")) # Your password from .env file
+# emails.append(os.getenv("EMAIL2")) # Your email address from .env file
+# passwords.append(os.getenv("PASSWORD2")) # Your password from .env file
 
-# creating a list of email addresses from os.getenv
-emails = [email1, email0, email2]
-# creating a list of passwords from os.getenv
-passwords = [passWord1, passWord0, passWord2]
+for key in os.environ:
+    if key.startswith("EMAIL",0,5):
+        emails.append(os.getenv(key))
+
+for key in os.environ:
+    if key.startswith("PASSWORD",0,9):
+        passwords.append(os.getenv(key))
+
+# print(emails)
+# print(passwords)
+
+
+url = "https://www.bing.com/" # Search engine URL
 testQueries = ["Hi", "world quant"]  # this is a test query
 
 # Navigate to the login page
@@ -69,6 +79,4 @@ if __name__ == "__main__":
         login(driver, email, passWord)
         search(driver, testQueries)
         time.sleep(5)
-    driver.quit()
-
-
+        driver.quit()
