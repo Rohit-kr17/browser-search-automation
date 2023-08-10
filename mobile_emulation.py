@@ -1,3 +1,4 @@
+
 # This script will search for a list of queries on Bing.com and will log you in automatically using your Microsoft account.
 import time
 from selenium import webdriver
